@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { FormCnfigService } from 'src/app/services/form-config/form-cnfig.service';
 import { RegistrationService } from 'src/app/services/registration/registration.service';
 import { FieldValidation } from 'src/app/_shared/interfaces/field-validation';

@@ -4,19 +4,41 @@
   [formGroup]="registrationForm"
   (ngSubmit)="onSubmit()">
 
-  <mat-form-field class="field" *ngFor="let field of formConfig" appearance="fill">
+  <mat-form-field
+    *ngFor="let field of formConfig"
+    class="field"
+    appearance="fill">
+
     <mat-label>
       {{field.label}}
     </mat-label>
 
     <input
+      *ngIf="field.type !== 'password'; else passwordField"
       matInput
+      [type]="field.type"
       [formControlName]="field.name"
-      [required]="field.required"
-      [type]="passwordHide ? 'password' : 'text'">
+      [required]="field.required">
 
-    <button *ngIf="field.type === 'password'" mat-icon-button matSuffix (click)="passwordHide = !passwordHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
-      <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    <ng-template #passwordField>
+      <input
+        matInput
+        [formControlName]="field.name"
+        [required]="field.required"
+        [type]="passwordHide ? 'password' : 'text'">
+    </ng-template>
+
+
+    <button
+      *ngIf="field.type === 'password'"
+      matSuffix
+      mat-icon-button
+      type="button"
+      (click)="passwordHide = !passwordHide">
+
+      <mat-icon>
+        {{passwordHide ? 'visibility_off' : 'visibility'}}
+      </mat-icon>
     </button>
 
     <mat-error>
@@ -24,5 +46,12 @@
     </mat-error>
   </mat-form-field>
 
-  <button mat-flat-button color="primary" type="submit" [disabled]="!registrationForm.valid">Save</button>
+  <button
+    mat-flat-button
+    color="primary"
+    type="submit"
+    [disabled]="!registrationForm.valid">
+
+      Save
+  </button>
 </form>

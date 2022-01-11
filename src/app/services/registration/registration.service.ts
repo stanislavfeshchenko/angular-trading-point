@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Urls } from 'src/app/enums/urls';
 import { RegistrationRequest } from 'src/app/_shared/interfaces/registration-request';
 

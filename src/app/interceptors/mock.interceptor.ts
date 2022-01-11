@@ -7,6 +7,7 @@ import {
   HttpResponse
 } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+
 import { RegistrationField } from '../_shared/interfaces/registration-field';
 
 const registrationFormFieldsResponse: RegistrationField[] = [

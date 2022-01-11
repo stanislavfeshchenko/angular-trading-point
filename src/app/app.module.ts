@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardModule } from './components/dashboard/dashboard.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 import { MockInterceptor } from './interceptors/mock.interceptor';
 
 @NgModule({
@@ -16,11 +16,11 @@ import { MockInterceptor } from './interceptors/mock.interceptor';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    DashboardModule,
-
-    AppRoutingModule,
     MatGridListModule,
-    HttpClientModule
+    HttpClientModule,
+
+    DashboardModule,
+    AppRoutingModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

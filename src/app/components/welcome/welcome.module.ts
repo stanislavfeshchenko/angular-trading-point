@@ -1,10 +1,9 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+
 import { WelcomeRoutingModule } from './welcome-routing.module';
 import { WelcomeComponent } from './welcome.component';
-
-
 
 @NgModule({
   declarations: [
@@ -12,8 +11,9 @@ import { WelcomeComponent } from './welcome.component';
   ],
   imports: [
     CommonModule,
-    WelcomeRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+
+    WelcomeRoutingModule
   ]
 })
 export class WelcomeModule { }

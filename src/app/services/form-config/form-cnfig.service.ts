@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs';
+
 import { Urls } from 'src/app/enums/urls';
 import { RegistrationField } from 'src/app/_shared/interfaces/registration-field';
 
